@@ -31,7 +31,21 @@ Prints the confusion matrix of a trained model, requires the output state dict g
 Prints a visual representation of the attention rollout, mostly experimental, requires a state dict.
 
 ## How to edit the model
-Coming soon
+You can edit the number of transformer blocks and the depth of the replay layer by editing *models/vit.py*.
+
+- Line 53/54: insert the depth of the latent replay layer (number of blocks frozen + 1). For example, if you want to train after the sixth transformer block (and freeze all the preceding ones) modify it with:
+```
+            elif i <= 7:
+                lat_list.append(layer)
+```
+- Line 55/56: insert the total number of transformer blocks the model is going to use (number of blocks + 1). For example, if you want a model with 8 transformer blocks, modify it with:
+```
+            elif i > 9 and i < 14:
+                continue
+```
+
+After modifying the model, you **must** specify the last frozen parameter in the *params.cfg* file, the *freeze_below_layer* argument.
+
 
 
 
