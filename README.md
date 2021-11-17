@@ -6,21 +6,21 @@ Requires the AR1 conda enviroment found [here](https://github.com/vlomonaco/ar1-
 
 Edit the Code50 root folder path in the source code when creating the database object.
 
-'''
+```
 python3 test.py
-'''
+```
 
 Prints the model structure and parameters.
 
-'''
+```
 python3 vitlr.py
-'''
+```
 
 Trains the model on the Core50 dataset, nicv2_391 scenario. A tensorboard logs folder and a state dict will be generated.
 
-'''
+```
 python3 vitlr_stats.py
-'''
+```
 
 Prints the average training speed of single image batch
 
