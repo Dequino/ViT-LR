@@ -44,7 +44,16 @@ You can edit the number of transformer blocks and the depth of the replay layer 
                 continue
 ```
 
+The current model uses a base 12-blocks vision transformer, therefore the maximum amount of transformer blocks allowed is 12.
+
+It is possible to use more than 12 blocks by extending the base model. Go into *models/model.py* and modify the *model_name* from *B_32_imagenet1k* to *L_32_imagenet1k*. This model uses by default 24 self-attention blocks instead of 12. 
+By doing so, it is required to also modify the *models/vit.py* if statements (15 -> 27, 14 -> 26).
+
 After modifying the model, you **must** specify the last frozen parameter in the *params.cfg* file, the *freeze_below_layer* argument.
+
+You can check if the model is correct by running the *test.py* script, which also gives you a list of parameters you can use to find the correct layer to insert in the *cfg* file.
+
+It is possible to change hyperparameters and image batch size by modifying the *params.cfg* file.
 
 
 
