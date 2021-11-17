@@ -56,5 +56,27 @@ You can check if the model is correct by running the *test.py* script, which als
 It is possible to change hyperparameters and image batch size by modifying the *params.cfg* file.
 
 
+## Repository files description
+
+* README.md: This file
+* attention_rollout.ipynb: jupyter notebook illustrating how to do attention rollout on a trained model
+* confusion_matrix.ipynb: jupyter notebook illustrating how to print a confusion matrix of a trained model
+* data_loader.py: Core50 data loader
+* params.cfg: configuration file
+* test.py: script printing the current model architecture and layer list
+* testload.py: test script to load a state dict (ignore it)
+* utils.py: multiple functions used by the model, including accuracy evaluation
+* vit_rollout.py: functions used to do attention rollout
+* vitcumultrain.py: (old) script used to test cumulative training (ignore it)
+* vitlr.py: main training script
+* vitlr_stats.py: training scrpit that stops early and evaluates the average training speed on single image batches
+* models/configs.py: ViT configuration file, contains all the pre-trained ViT models that can be used as base for the model
+* models/model.py: ViT base model
+* models/test.py: another test script (ignore this)
+* models/transformer.py: the transformer block, including the self-attention algorithm inside
+* models/utils.py: util functions used by the transformer
+* models/vit.py: personalized wrapper for the ViT model used by ViT-LR
+
+
 
 
